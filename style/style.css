@@ -1,3 +1,4 @@
+/*
 *{padding:0;margin:0;border:0;}
 *,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
 :focus,:active{outline:none;}
@@ -13,7 +14,7 @@ a:hover{text-decoration:none;}
 ul li{list-style:none;}
 img{vertical-align:top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
-/* каскадность стилей
+каскадность стилей
 приоритет класса и айди выше
 *-1
 class-2
@@ -125,4 +126,150 @@ a:nth-child(2){
 a:nth-child(3){
     color: blue;
 }
+
+table, th, td{
+    border: 2px solid black;
+    padding: 10px;
+    border-collapse: collapse;
+}
+tfoot>tr{
+    color: white;
+    background-color: black !important;
+}
+caption{
+    font-size: 20px;
+    font-weight: bold;
+}
+thead>tr{
+    color: white;
+    background-color: black !important;
+}
+tr:nth-child(even) td:nth-child(odd) {
+    background-color: rgb(213, 254, 255);
+}
+tr:nth-child(odd) td:nth-child(odd){
+    background-color: rgb(107, 191, 194);
+}
+tr:nth-child(odd){
+    background-color: rgb(213, 254, 255);
+}
+
+псевдоэлементы
+::first-letter: позволяет выбрать первую букву из текста
+
+::first-line: стилизует первую строку текста
+
+::before: добавляет сообщение до определенного элемента
+
+::after: добавляет сообщение после определенного элемента
+
+::selection: выбирает выбранные пользователем элементы (срабатывает при выделении текста)
 */
+p::first-letter{
+    color: crimson;
+    font-size: 50px;
+}
+p::first-line{
+    font-weight: bold;
+}
+p::before{
+    content: "Важно!";
+    font-size: 40px;
+    font-weight: normal;
+}
+p::after{
+    content: "Важно!";
+    font-size: 40px;
+    font-weight: normal;
+}
+p::selection{
+    color: red;
+    background-color: black;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+    transition: .4s ease-in-out;
+  }
+  a {
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    color: white;
+    position: relative;
+    background: #3C4896;
+    display: block;
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    margin: 80px auto 0;
+  }
+  a:hover {
+    background: white;
+    border: 2px solid #3C4896;
+  }
+  /* скроем иконку загрузки до наведения на кнопку и текст "Скачать" после наведения на кнопку */
+  span {
+    overflow: hidden;
+  }
+  span, em, i.fa {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 46px; /* за вычетом границ кнопки */
+  }
+  em {
+    top: 0;
+    font-style: normal;
+  }
+  i.fa {
+    top: 100%; /* смещаем вниз */
+    font-size: 30px;
+    color: #3C4896;
+  }
+  a:hover em { 
+    top: -100%; /* смещаем вверх */
+  }
+  a:hover i.fa {
+    top: 0;
+  }
+  /* делаем подсказку прозрачной и убираем её со страницы, чтобы она не появлялась при наведении на место, где она должна появиться */
+  a:before, a:after{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+  }
+  /* стили для всплывающего блока с текстом */
+  a:before{
+    content: attr(data-tooltip);
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    background: #3C4896;
+    border-radius: 5px;
+    bottom: 90px;
+    left: calc(50% - 70px);
+  }
+  /* стили для стрелки */
+  a:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #3C4896;
+    bottom: 70px;
+    left: calc(50% - 10px);
+  }
+  a:hover:before, a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    transition: .2s ease-in-out .4s; /* сделаем появление подсказки с задержкой */
+  }
+  /* добавляем эффект движения */
+  a:hover:before {
+    bottom: 70px;
+  }
+  a:hover:after {
+    bottom: 50px;
+  }
