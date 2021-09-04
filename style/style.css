@@ -1,0 +1,128 @@
+*{padding:0;margin:0;border:0;}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+nav,footer,header,aside{display:block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display:none;}
+button{cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+ul li{list-style:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+/* каскадность стилей
+приоритет класса и айди выше
+*-1
+class-2
+id-3
+<style>-4
+important срабатывает - 5
+они суммируются
+*/
+/*
+*{
+    color: chocolate;
+    text-decoration: overline;
+}
+li{
+    margin: 20px;
+}
+a{
+    color: red;
+    text-decoration: none;
+}
+.linkClass {
+    color: blueviolet !important;
+}
+#linkId{
+    color: green;
+}
+#linkId2{
+    color: black;
+}
+*/
+
+/* псевдоклассы 
+selector:pseudoclass{
+    property: value;
+}
+
+:root{
+    --first-font-size: 14px;
+    --second-font-size: 20px;
+    --hover-color-font:  green;
+    --primary-color: red;
+    --second-color: blue;
+}
+a:link    {
+    color:blue; 
+}
+a:visited {
+    color:pink; 
+}
+a:hover   {
+    color:red; 
+    font-size: 20px;
+}
+a:active  {
+    color:yellow; 
+}
+div{
+    background-color: var(--primary-color);
+    color: var(--hover-color-font);
+    font-size: var(--first-font-size);
+}
+div:hover{
+    background-color: white;
+    font-size: calc(var(--first-font-size) + 10px);
+}
+div.class1:hover{
+    background-color: white;
+    color: black;
+}
+div.class1 > p{
+    display: none;
+    padding: 10px;
+}
+div.class1:hover > p{
+    display: block;
+}
+
+
+Псевдоклассы дочерних элементов
+:first-child: представляет элемент, который является первым дочерним элементом
+
+:last-child: представляет элемент, который является последним дочерним элементом
+
+!!редко :only-child: представляет элемент, который является единственным дочерним элементом в каком-нибудь контейнере
+
+!!редко :only-of-type: выбирает элемент, который является единственным элементом определенного типа (тега) в каком-нибудь контейнере
+
+:nth-child(n): представляет дочерний элемент, который имеет определенный номер n, например, второй дочерний элемент
+
+!!редко :nth-last-child(n): представляет дочерний элемент, который имеет определенный номер n, начиная с конца
+
+:nth-of-type(n): выбирает дочерний элемент определенного типа, который имеет определенный номер
+
+!!редко :nth-last-of-type(n): выбирает дочерний элемент определенного типа, который имеет определенный номер, начиная с конца
+
+a:first-child{
+    color: white;
+    background-color: black;
+}
+a{
+    display: block;
+}
+a:last-child{
+    background-color: red;
+}
+a:nth-child(2){
+    color: green;
+}
+a:nth-child(3){
+    color: blue;
+}
+*/
